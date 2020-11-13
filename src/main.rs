@@ -3,13 +3,14 @@ extern crate log;
 
 extern crate http;
 extern crate simple_server;
+use std::env;
 
 use http::header;
 use simple_server::{Method, Server, StatusCode};
 use std::fs;
 fn main() {
     let host = "127.0.0.1";
-    let port = "7865";
+    let port = "5555";
 
     let server = Server::new(|request, mut response| {
         info!("Request received. {} {}", request.method(), request.uri());
